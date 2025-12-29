@@ -1,0 +1,146 @@
+/* --- Root Variables for Consistency --- */
+:root {
+  --primary: #6366f1;
+  --primary-glow: rgba(99, 102, 241, 0.3);
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --radius: 20px;
+}
+
+/* --- Course Page Wrapper --- */
+.dashboard-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the header and grid */
+}
+
+/* --- Horizontal Course Grid --- */
+.course-grid {
+  display: flex;
+  flex-direction: row;       /* Forces cards into one line */
+  justify-content: center;   /* Centers the cards horizontally */
+  align-items: stretch;      /* Ensures cards are same height */
+  gap: 30px;
+  width: 100%;
+  margin-top: 40px;
+  flex-wrap: wrap;           /* Allows wrapping only if screen is too small */
+}
+
+/* --- Individual Course Card --- */
+.course-card {
+  flex: 1;
+  min-width: 320px;
+  max-width: 380px;
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Course Icon Styling --- */
+.course-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.math-bg { background: linear-gradient(135deg, #6366f1, #a855f7); }
+.science-bg { background: linear-gradient(135deg, #10b981, #3b82f6); }
+
+/* --- Course Info Typography --- */
+.course-info h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  color: var(--text-main);
+}
+
+.course-info p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+/* --- Progress Section in Card --- */
+.course-meta {
+  margin-bottom: 24px;
+}
+
+.course-meta .bar {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.course-meta .fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.course-meta span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* --- Action Button --- */
+.course-card .btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: #f1f5f9;
+  color: var(--primary);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.course-card .btn:hover {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 8px 15px var(--primary-glow);
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+  .course-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .course-card {
+    width: 100%;
+    max-width: 450px;
+  }
+}

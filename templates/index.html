@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexora AI | Learning Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <nav class="sidebar">
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span>Nexora</span>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active"><i class="ph ph-house"></i> Dashboard</a>
+      <a href="courses.html"><i class="ph ph-book-open"></i> Courses</a>
+      <a href="#"><i class="ph ph-chart-line-up"></i> Analytics</a>
+    </div>
+  </nav>
+
+  <main class="content">
+    <header class="main-header">
+      <div class="header-text">
+        <h1>AI Learning Dashboard</h1>
+        <p class="sub">Welcome back! Here is your personalized learning path.</p>
+      </div>
+      <div class="subject-picker">
+        <label for="subjectSelect">Current Path:</label>
+        <select id="subjectSelect">
+          <option value="Mathematics">Mathematics & Logic</option>
+          <option value="Physics">Advanced Physics</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      <section class="card animate-in delay-1">
+        <h2>Topic Mastery</h2>
+        <div id="masteryContainer">
+          </div>
+      </section>
+
+      <section class="card recommendation-card fade-in delay-1">
+        <div class="status-badge">AI RECOGNITION</div>
+        <h2>Focus Topic: <span id="focusTopic">Decimals</span></h2>
+        <p class="reason" id="aiReason">Based on your recent quiz performance, focusing on Decimals will bridge your knowledge gap in Fractions.</p>
+        <button class="primary-btn">Start Lesson <i class="ph ph-arrow-right"></i></button>
+      </section>
+
+      <section class="stats-grid fade-in delay-2">
+        <div class="card stat-box">
+          <h3><i class="ph ph-trend-up"></i> Strengths</h3>
+          <ul id="strengths">
+            <li>Geometry</li>
+            <li>Basic Algebra</li>
+          </ul>
+        </div>
+        <div class="card stat-box">
+          <h3><i class="ph ph-trend-down"></i> Weak Areas</h3>
+          <ul id="weaknesses">
+            <li>Complex Fractions</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card practice-section fade-in delay-3">
+        <h2>Quick Practice</h2>
+        <div class="practice-grid" id="practiceButtons">
+          <a href="/quiz?topic=Arithmetic" class="btn">Practice Arithmetic</a>
+          <a href="/quiz?topic=Decimals" class="btn">Practice Decimals</a>
+          <a href="/quiz?topic=Fractions" class="btn">Practice Fractions</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

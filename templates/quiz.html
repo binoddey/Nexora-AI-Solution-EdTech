@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Adaptive Tutor</title>
+
+  <link rel="stylesheet" href="/static/css/quiz.css" />
+</head>
+<body>
+
+  <header>
+    <div class="title">
+      🧠 <strong>AI Adaptive Tutor</strong>
+    </div>
+    <div class="mastery" id="masteryBadge">Mastery: 50%</div>
+  </header>
+
+  <main class="card">
+
+    <!-- Progress -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Question -->
+    <h2 id="questionText">Loading…</h2>
+
+    <!-- Meta -->
+    <div class="meta">
+      <span id="difficulty"></span>
+      <span id="prediction"></span>
+    </div>
+
+    <!-- Answer -->
+    <input
+      type="text"
+      placeholder="Enter answer…"
+      id="answerInput"
+    />
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="secondary" onclick="showHint()">Hint</button>
+      <button onclick="submitAnswer()">Submit</button>
+      <button class="ghost" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <!-- Feedback -->
+    <p class="feedback" id="feedback"></p>
+
+  </main>
+
+  <script src="/static/js/quiz.js"></script>
+</body>
+</html>
